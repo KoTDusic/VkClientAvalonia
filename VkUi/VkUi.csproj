@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Avalonia" Version="0.9.1" />
+      <PackageReference Include="Avalonia.Controls.DataGrid" Version="0.9.1" />
+      <PackageReference Include="Avalonia.Desktop" Version="0.9.1" />
+      <PackageReference Include="Avalonia.ReactiveUI" Version="0.9.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Views\MainWindow.xaml" />
+        <AvaloniaResource Include="Assets\**" />
+        <AvaloniaResource Include="**\*.xaml">
+            <SubType>Designer</SubType>
+        </AvaloniaResource>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\SettingsLibrary\SettingsLibrary.csproj" />
+      <ProjectReference Include="..\VkApi\VkApi.csproj" />
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,43 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:VkUi.ViewModels;assembly=VkUi"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="VkUi.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="KoTDusic VK Client">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <Button  Command="{Binding Auth}" Content="Авторизоваться" Padding="0,10"
+                     BorderBrush="Black" BorderThickness="1"/>
+            <TextBox Text="{Binding Login}"/>
+            <TextBox Text="{Binding Password}"/>
+        </StackPanel>
+        
+        <DataGrid Grid.Row="1" Items="{Binding Dialogs}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" 
+                                    Binding="{Binding Id}" 
+                                    Width="auto" />
+                <DataGridTextColumn Header="Тип диалога" 
+                                    Binding="{Binding Type}" 
+                                    Width="auto" />
+                <DataGridTextColumn Header="Последнее сообщение" 
+                                    Binding="{Binding LastMessage}" 
+                                    Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+    
+
+</Window>

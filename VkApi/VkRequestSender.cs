@@ -15,8 +15,8 @@ namespace VkApi
         private const string AuthUri = "/token";
         private const string DialogsUri = "/messages.getConversations";
         
-        private const string ClientSecret = "AlVXZFMUqyrnABp8ncuU";
-        private const string ClientId = "3697615";
+        private const string ClientSecret = "hHbZxrka2uZ6jB1inYsH";
+        private const string ClientId = "2274003";
         private const string ApiVersion = "5.103";
         private const string GrantType = "password";
         private const string Permissions = "messages,offline";
